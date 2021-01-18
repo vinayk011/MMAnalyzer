@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="summaryScope"
+            type="com.hug.mma.constants.EnumConstants.Scope" />
+
+        <variable
+            name="summaryDate"
+            type="java.util.Date" />
+
+        <variable
+            name="color"
+            type="int" />
+
+        <variable
+            name="isGraphView"
+            type="Boolean" />
+
+        <variable
+            name="hasBatches"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:padding="@dimen/_5ssp"
+        android:theme="@style/lightTheme">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/lightTheme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_60sdp"
+                        android:minHeight="@dimen/_30sdp"
+                        android:padding="5dp"
+                        android:popupBackground="@drawable/custom_spin_bg" />
+                </FrameLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/switchScope"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableRight="@drawable/ic_calendar"
+                    android:gravity="center"
+                    android:text="@string/day"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/previous"
+                        style="@style/border_less_button_normal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/transparent"
+                        android:gravity="center"
+                        app:font_text="@{@string/fa_chevron_left}" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        app:summary_date="@{summaryDate}"
+                        app:summary_scope="@{summaryScope}"
+                        tools:text="Date" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/next"
+                        style="@style/border_less_button_normal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/transparent"
+                        android:gravity="center"
+                        app:font_text="@{@string/fa_chevron_right}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:isGone="@{!isGraphView}">
+
+                    <FrameLayout
+                        android:id="@+id/graphView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_20sdp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/summaryView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            android:scrollbars="none" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:isGone="@{isGraphView}">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/cardsView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:clipToPadding="false"
+                            app:isGone="@{!hasBatches}"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/list_item_device" />
+
+                        <TextView
+                            android:id="@+id/empty_garden"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/batches_empty"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="24sp"
+                            app:isGone="@{hasBatches}" />
+
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

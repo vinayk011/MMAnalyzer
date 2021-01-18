@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_20sdp"
+    android:layout_marginRight="@dimen/_20sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingEnd="@dimen/_3sdp"
+            android:paddingStart="@dimen/_3sdp"
+            android:hint="@string/pin"
+            android:textColorHint="@color/colorPrimaryText"
+            app:hintTextAppearance="@style/hintTheme">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:focusable="false"
+                android:maxLength="4"
+                android:selectAllOnFocus="false"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/transparent"
+                android:textIsSelectable="false"
+                android:theme="@style/edit_text_1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_hide"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_1sdp"
+            android:minWidth="@dimen/_1sdp"
+            app:cornerRadius="@dimen/_20sdp"
+            app:backgroundTint="@color/light_gray_40"
+            app:rippleColor="@color/colorPrimary"
+            android:text="@string/show" />
+    </LinearLayout>
+
+    <com.hug.mma.widget.Pinview
+        android:id="@+id/pin_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="top"
+        app:cursorVisible="false"
+        app:forceKeyboard="true"
+        app:hint=""
+        app:inputType="number"
+        app:password="true"
+        app:pinHeight="@dimen/_40sdp"
+        app:pinLength="4"
+        app:pinWidth="@dimen/_40sdp" />
+</FrameLayout>

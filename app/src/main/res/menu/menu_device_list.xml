@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/device_management"
+        android:icon="@drawable/ic_device_settings"
+        android:title="@string/device_settings"
+        app:showAsAction="always" />
+
+</menu>

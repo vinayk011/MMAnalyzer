@@ -1,0 +1,83 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.hug.mma.listener.SignInListener" />
+
+        <variable
+            name="userDataErrorHolder"
+            type="com.hug.mma.bindingmodel.UserDataErrorHolder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_20sdp"
+            android:contentDescription="@string/sign_in_logo" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <com.hug.mma.widget.MobileNumberView
+            android:id="@+id/mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mn_hint="@string/mobile_number"
+            app:number_error="@{userDataErrorHolder.mobileError}"
+            app:number_input="@={userDataErrorHolder.mobile}" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <com.hug.mma.widget.OtpPin4View
+            android:id="@+id/otp_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:otp_error="@{userDataErrorHolder.pinError}"
+            app:otp_error_enable="@{userDataErrorHolder.pinError.get().length != 0}"
+            app:otp_hint="@string/pin"
+            app:otp_input="@={userDataErrorHolder.pin}" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/button"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center_horizontal"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> callback.onClickSignIn()}"
+            app:cornerRadius="@dimen/_20sdp"
+            app:rippleColor="@color/colorPrimaryDark"
+            android:text="@string/sign_in" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+
+        <!--<Button
+            style="@style/border_less_button_normal"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> callback.onClickForgotPin()}"
+            android:text="@string/forgot_pin" />-->
+    </LinearLayout>
+</layout>

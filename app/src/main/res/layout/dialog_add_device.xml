@@ -1,0 +1,131 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.hug.mma.listener.DialogListener" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="device"
+            type="com.hug.mma.bindingmodel.DeviceDataHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:minWidth="@dimen/_255sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{title}"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_15ssp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimaryText"
+            app:error="@{device.deviceIdError}"
+            app:errorEnabled="@{device.deviceIdError.get().length != 0}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_deviceId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:hint="@string/device_id"
+                android:selectAllOnFocus="false"
+                android:text="@={device.deviceId}"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:textColor="@color/colorPrimaryText"
+                android:textIsSelectable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hint_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimaryText"
+            app:error="@{device.deviceNameError}"
+            app:errorEnabled="@{device.deviceNameError.get().length != 0}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:hint="@string/device_name"
+                android:selectAllOnFocus="false"
+                android:text="@={device.deviceName}"
+                android:textColor="@color/colorPrimaryText"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textIsSelectable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel"
+                style="@style/button_2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:onClick="@{() -> callback.cancel()}"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/_20sdp"
+                app:rippleColor="@color/colorAccent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ok"
+                style="@style/button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:onClick="@{() -> callback.ok()}"
+                android:text="@string/done"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/_20sdp"
+                app:rippleColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

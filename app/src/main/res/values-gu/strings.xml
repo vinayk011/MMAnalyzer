@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request">Request</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="please_turn_on_permissions_at_setting_permission"><![CDATA[Please turn on permissions at\\n[Setting] > [Permission]]]></string>
+    <string name="cancel">Cancel</string>
+    <string name="processing">Processing..</string>
+    <string name="settings">સેટિંગ્સ</string>
+
+    // fonts
+    <string name="fa_chevron_right">&#xf054;</string>
+    <string name="fa_chevron_left">&#xf053;</string>
+    <string name="fa_refresh">&#xf021;</string>
+    <string name="fa_calendar_o">&#xf133;</string>
+    <string name="fa_check_circle_o">&#xf05d;</string>
+    <string name="fa_times">&#xf00d;</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="devices_empty">No Devices</string>
+    <string name="sign_in_logo">Sign In Logo</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="space" />
+    <string name="plus">+</string>
+    <string name="country_name">Country name</string>
+    <string name="country_code_format">+%s</string>
+    <string name="sign_in">Sign In</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="pin">PIN</string>
+    <string name="ok">Ok</string>
+    <string name="error">Error</string>
+    <string name="something_went_wrong_error">Something went wrong. Try again.</string>
+    <string name="server_connection_failed">You appear to be offline</string>
+    <string name="application_is_unable_to_connect_to_server">Application is unable to connect to server.</string>
+    <string name="application_is_unable_to_connect_to_server_go_offline">You can continue as offline, while we only show data available on device. Click OK to proceed.</string>
+    <string name="please_check_your_internet_connection_and_retry">Please check your internet connection and retry.</string>
+    <string name="retry">Retry</string>
+    <string name="syncing_data_from_server">Syncing data from server…</string>
+    <string name="data_sync_error">Data sync from server is failed.</string>
+    <string name="device_update_success">Devices are successfully updated.</string>
+    <string name="device_update_failed">Devices update failed</string>
+    <string name="add_device">Add Device</string>
+    <string name="edit_device">Edit Device</string>
+    <string name="device_settings">Device Settings</string>
+    <string name="done">Done</string>
+    <string name="device_id">Device Id</string>
+    <string name="device_name">Device name</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="saving">Saving changes...</string>
+    <string name="delete">Delete</string>
+    <string name="day">Day</string>
+    <string name="no_records_found">No Records Found</string>
+    <string name="today">આજે</string>
+    <string name="yeserday">ગઇકાલે</string>
+    <string name="this_week">This Week</string>
+    <string name="last_week">Last Week</string>
+    <string name="this_month">This Month</string>
+    <string name="last_month">Last Month</string>
+    <string name="device_stats">Device Stats</string>
+    <string name="ec">Ec</string>
+    <string name="type">Type</string>
+    <string name="total_samples">Total Samples</string>
+    <string name="min_ec">Min EC</string>
+    <string name="min_diff_ec">Min Diff in EC</string>
+    <string name="max_diff_ec">Max Diff in EC</string>
+    <string name="max_ec">Max EC</string>
+    <string name="qty_of_milk">Quantity</string>
+    <string name="batches">Batches</string>
+    <string name="my_devices">મારા ઉપકરણો</string>
+    <string name="device_management">ઉપકરણ વ્યવસ્થાપન</string>
+    <string name="device_details">ઉપકરણ વિગતો</string>
+    <string name="general">General</string>
+    <string name="lang_selected">Language selected</string>
+    <string name="graph_view">Graph View</string>
+    <string name="card_view">Card View</string>
+    <string name="choose_language">Choose Language..</string>
+    <string name="batches_empty">No batches available</string>
+    <string name="time">Time</string>
+    <string name="sequence">Sequence</string>
+    <string name="delete_desc">Are you sure you want to delete this device?</string>
+    <string name="no_changes">No changes to save.</string>
+    <string name="device_change_alert">Devices you have changed may not be saved.</string>
+    <string name="alert">Are you sure?</string>
+</resources>

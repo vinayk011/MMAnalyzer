@@ -1,0 +1,28 @@
+{
+  "languages": [
+    {
+      "locale": "en",
+      "language": "English"
+    },
+    {
+      "locale": "hi",
+      "language": "हिंदी"
+    },
+    {
+      "locale": "te",
+      "language": "తెలుగు"
+    },
+    {
+      "locale": "gu",
+      "language": "ગુજરાતી"
+    },
+    {
+      "locale": "pa",
+      "language": "ਪੰਜਾਬੀ"
+    },
+    {
+      "locale": "mr",
+      "language": "मराठी"
+    }
+  ]
+}
